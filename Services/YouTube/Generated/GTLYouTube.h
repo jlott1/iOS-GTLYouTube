@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@
 
 #import "GTLYouTubeConstants.h"
 
+#import "GTLYouTubeAccessPolicy.h"
 #import "GTLYouTubeActivity.h"
 #import "GTLYouTubeActivityContentDetails.h"
 #import "GTLYouTubeActivityListResponse.h"
@@ -43,6 +44,19 @@
 #import "GTLYouTubeGuideCategory.h"
 #import "GTLYouTubeGuideCategoryListResponse.h"
 #import "GTLYouTubeGuideCategorySnippet.h"
+#import "GTLYouTubeLiveBroadcast.h"
+#import "GTLYouTubeLiveBroadcastContentDetails.h"
+#import "GTLYouTubeLiveBroadcastList.h"
+#import "GTLYouTubeLiveBroadcastSlateSettings.h"
+#import "GTLYouTubeLiveBroadcastSnippet.h"
+#import "GTLYouTubeLiveBroadcastStatus.h"
+#import "GTLYouTubeLiveStream.h"
+#import "GTLYouTubeLiveStreamCdn.h"
+#import "GTLYouTubeLiveStreamCdnIngestionInfo.h"
+#import "GTLYouTubeLiveStreamCdnMulticastIngestionInfo.h"
+#import "GTLYouTubeLiveStreamList.h"
+#import "GTLYouTubeLiveStreamSnippet.h"
+#import "GTLYouTubeLiveStreamStatus.h"
 #import "GTLYouTubePageInfo.h"
 #import "GTLYouTubePlaylist.h"
 #import "GTLYouTubePlaylistContentDetails.h"
@@ -68,12 +82,21 @@
 #import "GTLYouTubeVideoCategoryListResponse.h"
 #import "GTLYouTubeVideoCategorySnippet.h"
 #import "GTLYouTubeVideoContentDetails.h"
+#import "GTLYouTubeVideoContentDetailsRegionRestriction.h"
+#import "GTLYouTubeVideoFileDetails.h"
+#import "GTLYouTubeVideoFileDetailsAudioStream.h"
+#import "GTLYouTubeVideoFileDetailsVideoStream.h"
 #import "GTLYouTubeVideoListResponse.h"
+#import "GTLYouTubeVideoMonetizationDetails.h"
 #import "GTLYouTubeVideoPlayer.h"
+#import "GTLYouTubeVideoProcessingDetails.h"
+#import "GTLYouTubeVideoProcessingDetailsProcessingProgress.h"
 #import "GTLYouTubeVideoRecordingDetails.h"
 #import "GTLYouTubeVideoSnippet.h"
 #import "GTLYouTubeVideoStatistics.h"
 #import "GTLYouTubeVideoStatus.h"
+#import "GTLYouTubeVideoSuggestions.h"
+#import "GTLYouTubeVideoSuggestionsTagSuggestion.h"
 #import "GTLYouTubeVideoTopicDetails.h"
 
 #import "GTLQueryYouTube.h"

@@ -215,7 +215,7 @@
 		4F8DB6DC13FDC0240001DD6C /* Copy Static Library Headers */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Headers;
+			dstPath = include/GTL;
 			dstSubfolderSpec = 16;
 			files = (
 				4F934E6C1512713000C4EA34 /* GTLBase64.h in Copy Static Library Headers */,
@@ -751,6 +751,7 @@
 				4F8DB6DC13FDC0240001DD6C /* Copy Static Library Headers */,
 				4F1C6E0C1027B3CE00B46459 /* Sources */,
 				4F1C6E0D1027B3CE00B46459 /* Frameworks */,
+				4C764F5516DE7BF0001AEC3A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -847,6 +848,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C764F5516DE7BF0001AEC3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh Scripts/CopyHeadersToLegacyBuildDir.command";
+			shellScript = "";
+		};
 		4F14A9DB0B1276B70072EBB8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1025,7 +1039,6 @@
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1069,7 +1082,6 @@
 				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1170,7 +1182,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = DevelopmentTestTool;
 			};
 			name = Debug;
@@ -1181,7 +1193,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = DevelopmentTestTool;
 			};
 			name = Release;
@@ -1190,15 +1202,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_ENABLE_OBJC_GC = unsupported;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DGTL_IPHONE=1",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = include/GTL/private;
 				PRODUCT_NAME = GTLTouchStaticLib;
+				PUBLIC_HEADERS_FOLDER_PATH = include/GTL;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1206,15 +1218,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_ENABLE_OBJC_GC = unsupported;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DGTL_IPHONE=1",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = include/GTL/private;
 				PRODUCT_NAME = GTLTouchStaticLib;
+				PUBLIC_HEADERS_FOLDER_PATH = include/GTL;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

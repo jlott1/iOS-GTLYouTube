@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
 
 #import "GTLYouTubeConstants.m"
 
+#import "GTLYouTubeAccessPolicy.m"
 #import "GTLYouTubeActivity.m"
 #import "GTLYouTubeActivityContentDetails.m"
 #import "GTLYouTubeActivityListResponse.m"
@@ -46,6 +47,19 @@
 #import "GTLYouTubeGuideCategory.m"
 #import "GTLYouTubeGuideCategoryListResponse.m"
 #import "GTLYouTubeGuideCategorySnippet.m"
+#import "GTLYouTubeLiveBroadcast.m"
+#import "GTLYouTubeLiveBroadcastContentDetails.m"
+#import "GTLYouTubeLiveBroadcastList.m"
+#import "GTLYouTubeLiveBroadcastSlateSettings.m"
+#import "GTLYouTubeLiveBroadcastSnippet.m"
+#import "GTLYouTubeLiveBroadcastStatus.m"
+#import "GTLYouTubeLiveStream.m"
+#import "GTLYouTubeLiveStreamCdn.m"
+#import "GTLYouTubeLiveStreamCdnIngestionInfo.m"
+#import "GTLYouTubeLiveStreamCdnMulticastIngestionInfo.m"
+#import "GTLYouTubeLiveStreamList.m"
+#import "GTLYouTubeLiveStreamSnippet.m"
+#import "GTLYouTubeLiveStreamStatus.m"
 #import "GTLYouTubePageInfo.m"
 #import "GTLYouTubePlaylist.m"
 #import "GTLYouTubePlaylistContentDetails.m"
@@ -71,12 +85,21 @@
 #import "GTLYouTubeVideoCategoryListResponse.m"
 #import "GTLYouTubeVideoCategorySnippet.m"
 #import "GTLYouTubeVideoContentDetails.m"
+#import "GTLYouTubeVideoContentDetailsRegionRestriction.m"
+#import "GTLYouTubeVideoFileDetails.m"
+#import "GTLYouTubeVideoFileDetailsAudioStream.m"
+#import "GTLYouTubeVideoFileDetailsVideoStream.m"
 #import "GTLYouTubeVideoListResponse.m"
+#import "GTLYouTubeVideoMonetizationDetails.m"
 #import "GTLYouTubeVideoPlayer.m"
+#import "GTLYouTubeVideoProcessingDetails.m"
+#import "GTLYouTubeVideoProcessingDetailsProcessingProgress.m"
 #import "GTLYouTubeVideoRecordingDetails.m"
 #import "GTLYouTubeVideoSnippet.m"
 #import "GTLYouTubeVideoStatistics.m"
 #import "GTLYouTubeVideoStatus.m"
+#import "GTLYouTubeVideoSuggestions.m"
+#import "GTLYouTubeVideoSuggestionsTagSuggestion.m"
 #import "GTLYouTubeVideoTopicDetails.m"
 
 #import "GTLQueryYouTube.m"

@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,16 +26,20 @@
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
-//   GTLYouTubeVideo (0 custom class methods, 10 custom properties)
+//   GTLYouTubeVideo (0 custom class methods, 14 custom properties)
 
 #import "GTLYouTubeVideo.h"
 
 #import "GTLYouTubeVideoContentDetails.h"
+#import "GTLYouTubeVideoFileDetails.h"
+#import "GTLYouTubeVideoMonetizationDetails.h"
 #import "GTLYouTubeVideoPlayer.h"
+#import "GTLYouTubeVideoProcessingDetails.h"
 #import "GTLYouTubeVideoRecordingDetails.h"
 #import "GTLYouTubeVideoSnippet.h"
 #import "GTLYouTubeVideoStatistics.h"
 #import "GTLYouTubeVideoStatus.h"
+#import "GTLYouTubeVideoSuggestions.h"
 #import "GTLYouTubeVideoTopicDetails.h"
 
 // ----------------------------------------------------------------------------
@@ -44,8 +48,9 @@
 //
 
 @implementation GTLYouTubeVideo
-@dynamic contentDetails, ETag, identifier, kind, player, recordingDetails,
-         snippet, statistics, status, topicDetails;
+@dynamic contentDetails, ETag, fileDetails, identifier, kind,
+         monetizationDetails, player, processingDetails, recordingDetails,
+         snippet, statistics, status, suggestions, topicDetails;
 
 + (NSDictionary *)propertyToJSONKeyMap {
   NSDictionary *map =

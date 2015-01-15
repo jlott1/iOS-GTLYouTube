@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@
 @property (copy) NSString *childId;
 @property (copy) NSString *commentId;
 @property (assign) BOOL convert;
+@property (copy) NSString *emailMessage;
 @property (copy) NSString *fileId;
 @property (copy) NSString *folderId;
 @property (assign) BOOL includeDeleted;
@@ -78,13 +79,12 @@
 @property (copy) NSString *revisionId;
 @property (assign) BOOL sendNotificationEmails;
 @property (assign) BOOL setModifiedDate;
-@property (copy) NSString *sourceLanguage;
 @property (assign) long long startChangeId;
-@property (copy) NSString *targetLanguage;
 @property (copy) NSString *timedTextLanguage;
 @property (copy) NSString *timedTextTrackName;
 @property (copy) NSString *updatedMin;
 @property (assign) BOOL updateViewedDate;
+@property (assign) BOOL useContentAsIndexableText;
 
 #pragma mark -
 #pragma mark "about" methods
@@ -232,6 +232,7 @@
 //   commentId: The ID of the comment.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 //   kGTLAuthScopeDriveReadonly
 + (id)queryForCommentsDeleteWithFileId:(NSString *)fileId
                              commentId:(NSString *)commentId;
@@ -246,6 +247,7 @@
 //     comment, and will include any deleted replies. (Default false)
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 //   kGTLAuthScopeDriveReadonly
 // Fetches a GTLDriveComment.
 + (id)queryForCommentsGetWithFileId:(NSString *)fileId
@@ -257,6 +259,7 @@
 //   fileId: The ID of the file.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 //   kGTLAuthScopeDriveReadonly
 // Fetches a GTLDriveComment.
 + (id)queryForCommentsInsertWithObject:(GTLDriveComment *)object
@@ -279,6 +282,7 @@
 //     returned. Formatted as an RFC 3339 timestamp.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 //   kGTLAuthScopeDriveReadonly
 // Fetches a GTLDriveCommentList.
 + (id)queryForCommentsListWithFileId:(NSString *)fileId;
@@ -290,6 +294,7 @@
 //   commentId: The ID of the comment.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 // Fetches a GTLDriveComment.
 + (id)queryForCommentsPatchWithObject:(GTLDriveComment *)object
                                fileId:(NSString *)fileId
@@ -302,6 +307,7 @@
 //   commentId: The ID of the comment.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 // Fetches a GTLDriveComment.
 + (id)queryForCommentsUpdateWithObject:(GTLDriveComment *)object
                                 fileId:(NSString *)fileId
@@ -323,9 +329,6 @@
 //   ocrLanguage: If ocr is true, hints at the language to use. Valid values are
 //     ISO 639-1 codes.
 //   pinned: Whether to pin the head revision of the new copy. (Default false)
-//   sourceLanguage: The language of the original file to be translated.
-//   targetLanguage: Target language to translate the file to. If no
-//     sourceLanguage is provided, the API will attempt to detect the language.
 //   timedTextLanguage: The language of the timed text.
 //   timedTextTrackName: The timed text track name.
 //  Authorization scope(s):
@@ -373,11 +376,10 @@
 //     ISO 639-1 codes.
 //   pinned: Whether to pin the head revision of the uploaded file. (Default
 //     false)
-//   sourceLanguage: The language of the original file to be translated.
-//   targetLanguage: Target language to translate the file to. If no
-//     sourceLanguage is provided, the API will attempt to detect the language.
 //   timedTextLanguage: The language of the timed text.
 //   timedTextTrackName: The timed text track name.
+//   useContentAsIndexableText: Whether to use the content as indexable text.
+//     (Default false)
 //  Upload Parameters:
 //   Maximum size: 10GB
 //   Accepted MIME type(s): */*
@@ -422,13 +424,12 @@
 //   pinned: Whether to pin the new revision. (Default false)
 //   setModifiedDate: Whether to set the modified date with the supplied
 //     modified date. (Default false)
-//   sourceLanguage: The language of the original file to be translated.
-//   targetLanguage: Target language to translate the file to. If no
-//     sourceLanguage is provided, the API will attempt to detect the language.
 //   timedTextLanguage: The language of the timed text.
 //   timedTextTrackName: The timed text track name.
 //   updateViewedDate: Whether to update the view date after successfully
 //     updating the file. (Default true)
+//   useContentAsIndexableText: Whether to use the content as indexable text.
+//     (Default false)
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
 //   kGTLAuthScopeDriveFile
@@ -483,13 +484,12 @@
 //   pinned: Whether to pin the new revision. (Default false)
 //   setModifiedDate: Whether to set the modified date with the supplied
 //     modified date. (Default false)
-//   sourceLanguage: The language of the original file to be translated.
-//   targetLanguage: Target language to translate the file to. If no
-//     sourceLanguage is provided, the API will attempt to detect the language.
 //   timedTextLanguage: The language of the timed text.
 //   timedTextTrackName: The timed text track name.
 //   updateViewedDate: Whether to update the view date after successfully
 //     updating the file. (Default true)
+//   useContentAsIndexableText: Whether to use the content as indexable text.
+//     (Default false)
 //  Upload Parameters:
 //   Maximum size: 10GB
 //   Accepted MIME type(s): */*
@@ -587,7 +587,9 @@
 //  Required:
 //   fileId: The ID for the file.
 //  Optional:
-//   sendNotificationEmails: Whether to send notification emails. (Default true)
+//   emailMessage: A custom message to include in notification emails.
+//   sendNotificationEmails: Whether to send notification emails when sharing to
+//     users or groups. (Default true)
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
 //   kGTLAuthScopeDriveFile
@@ -645,6 +647,7 @@
 //   replyId: The ID of the reply.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 + (id)queryForRepliesDeleteWithFileId:(NSString *)fileId
                             commentId:(NSString *)commentId
                               replyId:(NSString *)replyId;
@@ -660,6 +663,7 @@
 //     (Default false)
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 //   kGTLAuthScopeDriveReadonly
 // Fetches a GTLDriveCommentReply.
 + (id)queryForRepliesGetWithFileId:(NSString *)fileId
@@ -673,6 +677,7 @@
 //   commentId: The ID of the comment.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 // Fetches a GTLDriveCommentReply.
 + (id)queryForRepliesInsertWithObject:(GTLDriveCommentReply *)object
                                fileId:(NSString *)fileId
@@ -693,6 +698,7 @@
 //     "nextPageToken" from the previous response.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 //   kGTLAuthScopeDriveReadonly
 // Fetches a GTLDriveCommentReplyList.
 + (id)queryForRepliesListWithFileId:(NSString *)fileId
@@ -706,6 +712,7 @@
 //   replyId: The ID of the reply.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 // Fetches a GTLDriveCommentReply.
 + (id)queryForRepliesPatchWithObject:(GTLDriveCommentReply *)object
                               fileId:(NSString *)fileId
@@ -720,6 +727,7 @@
 //   replyId: The ID of the reply.
 //  Authorization scope(s):
 //   kGTLAuthScopeDrive
+//   kGTLAuthScopeDriveFile
 // Fetches a GTLDriveCommentReply.
 + (id)queryForRepliesUpdateWithObject:(GTLDriveCommentReply *)object
                                fileId:(NSString *)fileId

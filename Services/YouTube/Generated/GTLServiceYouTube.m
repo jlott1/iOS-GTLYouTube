@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@
 + (NSArray *)checkClasses {
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryYouTube class],
+                      [GTLYouTubeAccessPolicy class],
                       [GTLYouTubeActivity class],
                       [GTLYouTubeActivityContentDetails class],
                       [GTLYouTubeActivityListResponse class],
@@ -53,6 +54,19 @@
                       [GTLYouTubeGuideCategory class],
                       [GTLYouTubeGuideCategoryListResponse class],
                       [GTLYouTubeGuideCategorySnippet class],
+                      [GTLYouTubeLiveBroadcast class],
+                      [GTLYouTubeLiveBroadcastContentDetails class],
+                      [GTLYouTubeLiveBroadcastList class],
+                      [GTLYouTubeLiveBroadcastSlateSettings class],
+                      [GTLYouTubeLiveBroadcastSnippet class],
+                      [GTLYouTubeLiveBroadcastStatus class],
+                      [GTLYouTubeLiveStream class],
+                      [GTLYouTubeLiveStreamCdn class],
+                      [GTLYouTubeLiveStreamCdnIngestionInfo class],
+                      [GTLYouTubeLiveStreamCdnMulticastIngestionInfo class],
+                      [GTLYouTubeLiveStreamList class],
+                      [GTLYouTubeLiveStreamSnippet class],
+                      [GTLYouTubeLiveStreamStatus class],
                       [GTLYouTubePageInfo class],
                       [GTLYouTubePlaylist class],
                       [GTLYouTubePlaylistContentDetails class],
@@ -78,12 +92,21 @@
                       [GTLYouTubeVideoCategoryListResponse class],
                       [GTLYouTubeVideoCategorySnippet class],
                       [GTLYouTubeVideoContentDetails class],
+                      [GTLYouTubeVideoContentDetailsRegionRestriction class],
+                      [GTLYouTubeVideoFileDetails class],
+                      [GTLYouTubeVideoFileDetailsAudioStream class],
+                      [GTLYouTubeVideoFileDetailsVideoStream class],
                       [GTLYouTubeVideoListResponse class],
+                      [GTLYouTubeVideoMonetizationDetails class],
                       [GTLYouTubeVideoPlayer class],
+                      [GTLYouTubeVideoProcessingDetails class],
+                      [GTLYouTubeVideoProcessingDetailsProcessingProgress class],
                       [GTLYouTubeVideoRecordingDetails class],
                       [GTLYouTubeVideoSnippet class],
                       [GTLYouTubeVideoStatistics class],
                       [GTLYouTubeVideoStatus class],
+                      [GTLYouTubeVideoSuggestions class],
+                      [GTLYouTubeVideoSuggestionsTagSuggestion class],
                       [GTLYouTubeVideoTopicDetails class],
                       nil];
   return classes;

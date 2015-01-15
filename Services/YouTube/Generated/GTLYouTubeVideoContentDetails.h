@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,7 @@
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
-//   GTLYouTubeVideoContentDetails (0 custom class methods, 2 custom properties)
-//   GTLYouTubeVideoContentDetailsRegionRestriction (0 custom class methods, 2 custom properties)
+//   GTLYouTubeVideoContentDetails (0 custom class methods, 6 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -42,9 +41,20 @@
 //   GTLYouTubeVideoContentDetails
 //
 
-// Details about the media content of a YouTube video.
+// Details about the content of a YouTube Video.
 
 @interface GTLYouTubeVideoContentDetails : GTLObject
+
+// The value of captions indicates whether the video has captions or not.
+@property (copy) NSString *caption;
+
+// The value of definition indicates whether the video is available in high
+// definition or only in standard definition.
+@property (copy) NSString *definition;
+
+// The value of dimension indicates whether the video is available in 3D or in
+// 2D.
+@property (copy) NSString *dimension;
 
 // The length of the video. The tag value is an ISO 8601 duration in the format
 // PT#M#S, in which the letters PT indicate that the value specifies a period of
@@ -55,32 +65,14 @@
 // seconds long.
 @property (copy) NSString *duration;
 
+// The value of is_license_content indicates whether the video is licensed
+// content.
+@property (retain) NSNumber *licensedContent;  // boolValue
+
 // The regionRestriction object contains information about the countries where a
 // video is (or is not) viewable. The object will contain either the
 // contentDetails.regionRestriction.allowed property or the
 // contentDetails.regionRestriction.blocked property.
 @property (retain) GTLYouTubeVideoContentDetailsRegionRestriction *regionRestriction;
-
-@end
-
-
-// ----------------------------------------------------------------------------
-//
-//   GTLYouTubeVideoContentDetailsRegionRestriction
-//
-
-@interface GTLYouTubeVideoContentDetailsRegionRestriction : GTLObject
-
-// A list of region codes that identify countries where the video is viewable.
-// If this property is present and a country is not listed in its value, then
-// the video is blocked from appearing in that country. If this property is
-// present and contains an empty list, the video is blocked in all countries.
-@property (retain) NSArray *allowed;  // of NSString
-
-// A list of region codes that identify countries where the video is blocked. If
-// this property is present and a country is not listed in its value, then the
-// video is viewable in that country. If this property is present and contains
-// an empty list, the video is viewable in all countries.
-@property (retain) NSArray *blocked;  // of NSString
 
 @end

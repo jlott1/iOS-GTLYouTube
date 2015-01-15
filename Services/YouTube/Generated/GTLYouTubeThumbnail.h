@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
-//   GTLYouTubeThumbnail (0 custom class methods, 1 custom properties)
+//   GTLYouTubeThumbnail (0 custom class methods, 3 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -43,7 +43,13 @@
 
 @interface GTLYouTubeThumbnail : GTLObject
 
+// (Optional) Height of the thumbnail image.
+@property (retain) NSNumber *height;  // unsignedIntValue
+
 // The thumbnail image's URL.
 @property (copy) NSString *url;
+
+// (Optional) Width of the thumbnail image.
+@property (retain) NSNumber *width;  // unsignedIntValue
 
 @end

@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,12 +52,13 @@
 
 @implementation GTLQueryDrive
 
-@dynamic appId, changeId, childId, commentId, convert, fields, fileId, folderId,
-         includeDeleted, includeSubscribed, maxChangeIdCount, maxResults,
-         newRevision, ocr, ocrLanguage, pageToken, parentId, permissionId,
-         pinned, projection, q, replyId, revisionId, sendNotificationEmails,
-         setModifiedDate, sourceLanguage, startChangeId, targetLanguage,
-         timedTextLanguage, timedTextTrackName, updatedMin, updateViewedDate;
+@dynamic appId, changeId, childId, commentId, convert, emailMessage, fields,
+         fileId, folderId, includeDeleted, includeSubscribed, maxChangeIdCount,
+         maxResults, newRevision, ocr, ocrLanguage, pageToken, parentId,
+         permissionId, pinned, projection, q, replyId, revisionId,
+         sendNotificationEmails, setModifiedDate, startChangeId,
+         timedTextLanguage, timedTextTrackName, updatedMin, updateViewedDate,
+         useContentAsIndexableText;
 
 #pragma mark -
 #pragma mark "about" methods

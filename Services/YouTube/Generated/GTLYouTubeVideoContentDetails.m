@@ -1,4 +1,4 @@
-/* Copyright (c) 2012 Google Inc.
+/* Copyright (c) 2013 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,10 +26,11 @@
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
-//   GTLYouTubeVideoContentDetails (0 custom class methods, 2 custom properties)
-//   GTLYouTubeVideoContentDetailsRegionRestriction (0 custom class methods, 2 custom properties)
+//   GTLYouTubeVideoContentDetails (0 custom class methods, 6 custom properties)
 
 #import "GTLYouTubeVideoContentDetails.h"
+
+#import "GTLYouTubeVideoContentDetailsRegionRestriction.h"
 
 // ----------------------------------------------------------------------------
 //
@@ -37,25 +38,6 @@
 //
 
 @implementation GTLYouTubeVideoContentDetails
-@dynamic duration, regionRestriction;
-@end
-
-
-// ----------------------------------------------------------------------------
-//
-//   GTLYouTubeVideoContentDetailsRegionRestriction
-//
-
-@implementation GTLYouTubeVideoContentDetailsRegionRestriction
-@dynamic allowed, blocked;
-
-+ (NSDictionary *)arrayPropertyToClassMap {
-  NSDictionary *map =
-    [NSDictionary dictionaryWithObjectsAndKeys:
-      [NSString class], @"allowed",
-      [NSString class], @"blocked",
-      nil];
-  return map;
-}
-
+@dynamic caption, definition, dimension, duration, licensedContent,
+         regionRestriction;
 @end
