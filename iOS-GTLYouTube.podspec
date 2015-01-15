@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'http://github.com/brynbellomy/iOS-GTLYouTube'
   s.license      = { :type => 'WTFPL', :file => 'LICENSE.md' }
 
-  s.source       = { :git => 'https://github.com/brynbellomy/iOS-GTLYouTube.git', :tag => "v#{s.version}" }
+  s.source       = { :git => 'https://github.com/jlott1/iOS-GTLYouTube', :tag => "v#{s.version}" }
 
   s.requires_arc = false
 
