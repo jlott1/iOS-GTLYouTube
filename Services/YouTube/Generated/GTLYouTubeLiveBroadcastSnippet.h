@@ -27,7 +27,6 @@
 //   https://developers.google.com/youtube/v3
 // Classes:
 //   GTLYouTubeLiveBroadcastSnippet (0 custom class methods, 9 custom properties)
-//   GTLYouTubeLiveBroadcastSnippetThumbnails (0 custom class methods, 0 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -35,63 +34,55 @@
   #import "GTLObject.h"
 #endif
 
-@class GTLYouTubeLiveBroadcastSnippetThumbnails;
-@class GTLYouTubeThumbnail;
+@class GTLYouTubeThumbnailDetails;
 
 // ----------------------------------------------------------------------------
 //
 //   GTLYouTubeLiveBroadcastSnippet
 //
 
-// Basic details about a live broadcast, including title, description and
-// thumbnails.
-
 @interface GTLYouTubeLiveBroadcastSnippet : GTLObject
 
-// Date and time the broadcast is actual to end. The value is specified in ISO
-// 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+// The date and time that the broadcast actually ended. This information is only
+// available once the broadcast's state is complete. The value is specified in
+// ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 @property (retain) GTLDateTime *actualEndTime;
 
-// Date and time the broadcast is actual to start. The value is specified in ISO
-// 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+// The date and time that the broadcast actually started. This information is
+// only available once the broadcast's state is live. The value is specified in
+// ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 @property (retain) GTLDateTime *actualStartTime;
 
-// Channel publishing the broadcast.
+// The ID that YouTube uses to uniquely identify the channel that is publishing
+// the broadcast.
 @property (copy) NSString *channelId;
 
-// Description of the broadcast.
+// The broadcast's description. As with the title, you can set this field by
+// modifying the broadcast resource or by setting the description field of the
+// corresponding video resource.
 // Remapped to 'descriptionProperty' to avoid NSObject's 'description'.
 @property (copy) NSString *descriptionProperty;
 
-// Date and time the broadcast was published at. The value is specified in ISO
-// 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+// The date and time that the broadcast was added to YouTube's live broadcast
+// schedule. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 @property (retain) GTLDateTime *publishedAt;
 
-// Date and time the broadcast is scheduled to end. The value is specified in
-// ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+// The date and time that the broadcast is scheduled to end. The value is
+// specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 @property (retain) GTLDateTime *scheduledEndTime;
 
-// Date and time the broadcast is scheduled to start. The value is specified in
-// ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+// The date and time that the broadcast is scheduled to start. The value is
+// specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 @property (retain) GTLDateTime *scheduledStartTime;
 
-// Video thumbnails.
-@property (retain) GTLYouTubeLiveBroadcastSnippetThumbnails *thumbnails;
+// A map of thumbnail images associated with the broadcast. For each nested
+// object in this object, the key is the name of the thumbnail image, and the
+// value is an object that contains other information about the thumbnail.
+@property (retain) GTLYouTubeThumbnailDetails *thumbnails;
 
-// Title of the broadcast.
+// The broadcast's title. Note that the broadcast represents exactly one YouTube
+// video. You can set this field by modifying the broadcast resource or by
+// setting the title field of the corresponding video resource.
 @property (copy) NSString *title;
 
-@end
-
-
-// ----------------------------------------------------------------------------
-//
-//   GTLYouTubeLiveBroadcastSnippetThumbnails
-//
-
-@interface GTLYouTubeLiveBroadcastSnippetThumbnails : GTLObject
-// This object is documented as having more properties that are
-// GTLYouTubeThumbnail. Use -additionalJSONKeys and -additionalPropertyForName:
-// to get the list of properties and then fetch them; or -additionalProperties
-// to fetch them all at once.
 @end

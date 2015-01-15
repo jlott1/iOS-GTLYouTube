@@ -26,7 +26,7 @@
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
-//   GTLYouTubeLiveBroadcast (0 custom class methods, 7 custom properties)
+//   GTLYouTubeLiveBroadcast (0 custom class methods, 6 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -35,7 +35,6 @@
 #endif
 
 @class GTLYouTubeLiveBroadcastContentDetails;
-@class GTLYouTubeLiveBroadcastSlateSettings;
 @class GTLYouTubeLiveBroadcastSnippet;
 @class GTLYouTubeLiveBroadcastStatus;
 
@@ -44,30 +43,33 @@
 //   GTLYouTubeLiveBroadcast
 //
 
-// A live broadcast describes live event configuration.
+// A liveBroadcast resource represents an event that will be streamed, via live
+// video, on YouTube.
 
 @interface GTLYouTubeLiveBroadcast : GTLObject
 
-// The content details of the live broadcast.
+// The contentDetails object contains information about the event's video
+// content, such as whether the content can be shown in an embedded video player
+// or if it will be archived and therefore available for viewing after the event
+// has concluded.
 @property (retain) GTLYouTubeLiveBroadcastContentDetails *contentDetails;
 
-// The eTag of the broadcast.
+// Etag of this resource.
 @property (copy) NSString *ETag;
 
-// The unique id of the broadcast.
+// The ID that YouTube assigns to uniquely identify the broadcast.
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 @property (copy) NSString *identifier;
 
-// The type of this API resource.
+// Identifies what kind of resource this is. Value: the fixed string
+// "youtube#liveBroadcast".
 @property (copy) NSString *kind;
 
-// The slate settings of the live broadcast.
-@property (retain) GTLYouTubeLiveBroadcastSlateSettings *slateSettings;
-
-// Basic details about the live broadcast.
+// The snippet object contains basic details about the event, including its
+// title, description, start time, and end time.
 @property (retain) GTLYouTubeLiveBroadcastSnippet *snippet;
 
-// The status of the live broadcast.
+// The status object contains information about the event's status.
 @property (retain) GTLYouTubeLiveBroadcastStatus *status;
 
 @end

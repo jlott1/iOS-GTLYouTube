@@ -26,7 +26,7 @@
 // Documentation:
 //   https://developers.google.com/youtube/v3
 // Classes:
-//   GTLYouTubeVideo (0 custom class methods, 14 custom properties)
+//   GTLYouTubeVideo (0 custom class methods, 18 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -34,11 +34,15 @@
   #import "GTLObject.h"
 #endif
 
+@class GTLYouTubeVideoAgeGating;
 @class GTLYouTubeVideoContentDetails;
+@class GTLYouTubeVideoConversionPings;
 @class GTLYouTubeVideoFileDetails;
+@class GTLYouTubeVideoLiveStreamingDetails;
 @class GTLYouTubeVideoMonetizationDetails;
 @class GTLYouTubeVideoPlayer;
 @class GTLYouTubeVideoProcessingDetails;
+@class GTLYouTubeVideoProjectDetails;
 @class GTLYouTubeVideoRecordingDetails;
 @class GTLYouTubeVideoSnippet;
 @class GTLYouTubeVideoStatistics;
@@ -55,11 +59,18 @@
 
 @interface GTLYouTubeVideo : GTLObject
 
+// Age restriction details related to a video.
+@property (retain) GTLYouTubeVideoAgeGating *ageGating;
+
 // The contentDetails object contains information about the video content,
 // including the length of the video and its aspect ratio.
 @property (retain) GTLYouTubeVideoContentDetails *contentDetails;
 
-// The ETag of the video resource.
+// The conversionPings object encapsulates information about url pings that need
+// to be respected by the App in different video contexts.
+@property (retain) GTLYouTubeVideoConversionPings *conversionPings;
+
+// Etag of this resource.
 @property (copy) NSString *ETag;
 
 // The fileDetails object encapsulates information about the video file that was
@@ -72,9 +83,14 @@
 // identifier property maps to 'id' in JSON (to avoid Objective C's 'id').
 @property (copy) NSString *identifier;
 
-// The type of the API resource. For video resources, the value will be
-// youtube#video.
+// Identifies what kind of resource this is. Value: the fixed string
+// "youtube#video".
 @property (copy) NSString *kind;
+
+// The liveStreamingDetails object contains metadata about a live video
+// broadcast. The object will only be present in a video resource if the video
+// is an upcoming, live, or completed live broadcast.
+@property (retain) GTLYouTubeVideoLiveStreamingDetails *liveStreamingDetails;
 
 // The monetizationDetails object encapsulates information about the
 // monetization status of the video.
@@ -94,6 +110,10 @@
 // uploaded can track the progress that YouTube has made in processing the
 // uploaded video file. This data can only be retrieved by the video owner.
 @property (retain) GTLYouTubeVideoProcessingDetails *processingDetails;
+
+// The projectDetails object contains information about the project specific
+// video metadata.
+@property (retain) GTLYouTubeVideoProjectDetails *projectDetails;
 
 // The recordingDetails object encapsulates information about the location, date
 // and address where the video was recorded.

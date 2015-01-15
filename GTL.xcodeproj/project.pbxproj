@@ -133,6 +133,10 @@
 		4F9F7E3911F5103B0033A2C1 /* GTLDateTimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F7E3811F5103B0033A2C1 /* GTLDateTimeTest.m */; };
 		4F9F7E3C11F510430033A2C1 /* GTLFrameworkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F7E3A11F510430033A2C1 /* GTLFrameworkTest.m */; };
 		4F9F7E3D11F510430033A2C1 /* GTLUtilitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F7E3B11F510430033A2C1 /* GTLUtilitiesTest.m */; };
+		4FA4F77B1755682800CB7616 /* TaskDelete1.request.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4F7771755682800CB7616 /* TaskDelete1.request.txt */; };
+		4FA4F77C1755682800CB7616 /* TaskDelete1.response.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4F7781755682800CB7616 /* TaskDelete1.response.txt */; };
+		4FA4F77D1755682800CB7616 /* TaskEmpty1.request.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4F7791755682800CB7616 /* TaskEmpty1.request.txt */; };
+		4FA4F77E1755682800CB7616 /* TaskEmpty1.response.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4F77A1755682800CB7616 /* TaskEmpty1.response.txt */; };
 		4FCC7A1D11EFD9EA0097924C /* GTLServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC7A1C11EFD9EA0097924C /* GTLServiceTest.m */; };
 		4FDE223913848173005AEFAA /* GTLFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE223313848173005AEFAA /* GTLFramework.m */; };
 		4FDE223A13848173005AEFAA /* GTLJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE223513848173005AEFAA /* GTLJSONParser.m */; };
@@ -215,7 +219,7 @@
 		4F8DB6DC13FDC0240001DD6C /* Copy Static Library Headers */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = include/GTL;
+			dstPath = Headers;
 			dstSubfolderSpec = 16;
 			files = (
 				4F934E6C1512713000C4EA34 /* GTLBase64.h in Copy Static Library Headers */,
@@ -323,6 +327,10 @@
 		4F9F7E3811F5103B0033A2C1 /* GTLDateTimeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLDateTimeTest.m; path = Tests/GTLDateTimeTest.m; sourceTree = "<group>"; };
 		4F9F7E3A11F510430033A2C1 /* GTLFrameworkTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLFrameworkTest.m; path = Tests/GTLFrameworkTest.m; sourceTree = "<group>"; };
 		4F9F7E3B11F510430033A2C1 /* GTLUtilitiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLUtilitiesTest.m; path = Tests/GTLUtilitiesTest.m; sourceTree = "<group>"; };
+		4FA4F7771755682800CB7616 /* TaskDelete1.request.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TaskDelete1.request.txt; path = Tests/Data/TaskDelete1.request.txt; sourceTree = "<group>"; };
+		4FA4F7781755682800CB7616 /* TaskDelete1.response.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TaskDelete1.response.txt; path = Tests/Data/TaskDelete1.response.txt; sourceTree = "<group>"; };
+		4FA4F7791755682800CB7616 /* TaskEmpty1.request.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TaskEmpty1.request.txt; path = Tests/Data/TaskEmpty1.request.txt; sourceTree = "<group>"; };
+		4FA4F77A1755682800CB7616 /* TaskEmpty1.response.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TaskEmpty1.response.txt; path = Tests/Data/TaskEmpty1.response.txt; sourceTree = "<group>"; };
 		4FCC7A1C11EFD9EA0097924C /* GTLServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLServiceTest.m; path = Tests/GTLServiceTest.m; sourceTree = "<group>"; };
 		4FDE223213848173005AEFAA /* GTLFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLFramework.h; path = Utilities/GTLFramework.h; sourceTree = "<group>"; };
 		4FDE223313848173005AEFAA /* GTLFramework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLFramework.m; path = Utilities/GTLFramework.m; sourceTree = "<group>"; };
@@ -616,6 +624,10 @@
 				4F164607137098C80096E878 /* Task1.response.txt */,
 				4F4DE9071371DD6F00F5C554 /* TaskError1.request.txt */,
 				4F4DE9081371DD6F00F5C554 /* TaskError1.response.txt */,
+				4FA4F7771755682800CB7616 /* TaskDelete1.request.txt */,
+				4FA4F7781755682800CB7616 /* TaskDelete1.response.txt */,
+				4FA4F7791755682800CB7616 /* TaskEmpty1.request.txt */,
+				4FA4F77A1755682800CB7616 /* TaskEmpty1.response.txt */,
 				4F4DEB6B1372170300F5C554 /* TaskPage1a.request.txt */,
 				4F4DEB6C1372170300F5C554 /* TaskPage1a.response.txt */,
 				4F4DEB6D1372170300F5C554 /* TaskPage1b.request.txt */,
@@ -751,7 +763,6 @@
 				4F8DB6DC13FDC0240001DD6C /* Copy Static Library Headers */,
 				4F1C6E0C1027B3CE00B46459 /* Sources */,
 				4F1C6E0D1027B3CE00B46459 /* Frameworks */,
-				4C764F5516DE7BF0001AEC3A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -786,7 +797,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "GTL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -834,6 +845,10 @@
 				4F31A3D8142AA6BA00A58EAD /* TaskBatchPage1a.response.txt in Resources */,
 				4F31A3D9142AA6BA00A58EAD /* TaskBatchPage1b.request.txt in Resources */,
 				4F31A3DA142AA6BA00A58EAD /* TaskBatchPage1b.response.txt in Resources */,
+				4FA4F77B1755682800CB7616 /* TaskDelete1.request.txt in Resources */,
+				4FA4F77C1755682800CB7616 /* TaskDelete1.response.txt in Resources */,
+				4FA4F77D1755682800CB7616 /* TaskEmpty1.request.txt in Resources */,
+				4FA4F77E1755682800CB7616 /* TaskEmpty1.response.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,19 +863,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C764F5516DE7BF0001AEC3A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/bin/sh Scripts/CopyHeadersToLegacyBuildDir.command";
-			shellScript = "";
-		};
 		4F14A9DB0B1276B70072EBB8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1030,10 +1032,7 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_ANALYZER_OBJC_UNUSED_IVARS = NO;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
@@ -1044,9 +1043,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG=1";
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1073,10 +1072,7 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_ANALYZER_OBJC_UNUSED_IVARS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -1087,8 +1083,7 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1115,7 +1110,6 @@
 		4F14A9E00B1276B70072EBB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
@@ -1147,7 +1141,6 @@
 		4F14A9E10B1276B70072EBB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
@@ -1179,7 +1172,6 @@
 		4F1AD9090B71606100DC0485 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -1190,7 +1182,6 @@
 		4F1AD90A0B71606100DC0485 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "Resources/DevTestTool-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -1201,14 +1192,13 @@
 		4F1C6E101027B3CF00B46459 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DGTL_IPHONE=1",
 				);
-				PRIVATE_HEADERS_FOLDER_PATH = include/GTL/private;
 				PRODUCT_NAME = GTLTouchStaticLib;
-				PUBLIC_HEADERS_FOLDER_PATH = include/GTL;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -1217,14 +1207,13 @@
 		4F1C6E111027B3CF00B46459 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DGTL_IPHONE=1",
 				);
-				PRIVATE_HEADERS_FOLDER_PATH = include/GTL/private;
 				PRODUCT_NAME = GTLTouchStaticLib;
-				PUBLIC_HEADERS_FOLDER_PATH = include/GTL;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -1233,7 +1222,6 @@
 		4F38F7120B66EF2C00B24B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1257,7 +1245,6 @@
 		4F38F7130B66EF2C00B24B81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
