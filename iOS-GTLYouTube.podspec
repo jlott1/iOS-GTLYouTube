@@ -47,9 +47,7 @@ Pod::Spec.new do |s|
     HTTPFetcher/GTMReadMonitorInputStream.h
   ]
 
-  # s.source_files = FileList['./{Services/YouTube/Generated/{*.{h,m},GTLYouTubeConstants.m},GTLDefines.h,HTTPFetcher/GTM{GatherInputStream,HTTPFetchHistory,HTTPFetcher,HTTPFetcherLogging,HTTPFetcherService,HTTPUploadFetcher,MIMEDocument,ReadMonitorInputStream}.{h,m},OAuth2/{GTMOAuth2Authentication.{h,m},GTMOAuth2SignIn.{h,m},Touch/GTMOAuth2ViewControllerTouch.{h,m}},Objects/GTL{BatchQuery,BatchResult,DateTime,ErrorObject,Object,Query,RuntimeCommon,Service,UploadParameters}.{h,m},Utilities/GTL{{Base64,Framework,JSONParser,Utilities}.{h,m},TargetNamespace.h}}']
-
-  s.exclude_files = './Services/YouTube/Generated/GTLYouTube_Sources.m'
+  # s.source_files = FileList['./{Services/YouTube/Generated/{*.{h,m},GTLYouTubeConstants.m},GTLDefines.h,HTTPFetcher/GTM{GatherInputStream,HTTPFetchHistory,HTTPFetcher,HTTPFetcherLogging,HTTPFetcherService,HTTPUploadFetcher,MIMEDocument,ReadMonitorInputStream}.{h,m},OAuth2/{GTMOAuth2Authentication.{h,m},GTMOAuth2SignIn.{h,m},Touch/GTMOAuth2ViewControllerTouch.{h,m}},Objects/GTL{BatchQuery,BatchResult,DateTime,ErrorObject,Object,Query,RuntimeCommon,Service,UploadParameters}.{h,m},Utilities/GTL{{Base64,Framework,JSONParser,Utilities}.{h,m},TargetNamespace.h}}'].exclude('./{Services/YouTube/Generated/GTLYouTube_Sources.m}')
   
   #source_files.resolve
   #puts '*************** '
